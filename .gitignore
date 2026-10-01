@@ -1,0 +1,12 @@
+# Upstream app checkouts, created by `make deps` at build time and never
+# committed. Each one is cloned from its own fork (see UPSTREAM_URL in the
+# Makefile of the tool).
+metadavis/MetaDAVis/
+microbiomeprofiler/microbiomeprofiler/
+
+# Credentials for `make push_hub`
+.password
+
+# Galaxy / planemo run directories
+*.log
+/tmp/
