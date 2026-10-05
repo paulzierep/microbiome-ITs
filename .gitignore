@@ -1,12 +1,17 @@
-# Upstream app checkouts, created by `make deps` at build time and never
-# committed. Each one is cloned from its own fork (see UPSTREAM_URL in the
-# Makefile of the tool).
+# The application sources are never committed. Each Dockerfile clones its app
+# from its fork while the image is built, and `make deps` clones a separate copy
+# outside the repository (see DEPS_ROOT in the tool Makefiles), so the lines below
+# only guard against a checkout landing in the build tree by accident.
 metadavis/MetaDAVis/
-microbiomeprofiler/microbiomeprofiler/
+microbiomeprofiler/MicrobiomeProfiler/
+cminet/CMiNetShinyAPP/
+
+# Scratch checkouts of a fork, used while developing an adaptation. Not a build
+# input: the Dockerfiles clone from GitHub, so nothing here reaches an image.
+local_*/
 
 # Credentials for `make push_hub`
 .password
 
 # Galaxy / planemo run directories
 *.log
-/tmp/
